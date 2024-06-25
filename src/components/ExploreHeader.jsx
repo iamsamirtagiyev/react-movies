@@ -23,12 +23,12 @@ const ExploreHeader = ({data, type}) => {
     data.genres.map( genre => gnrs.push(genre.name))
 
   return (
-    <div className='calc-w-screen-64  flex gap-10 calc-h-screen-16 !bg-cover !bg-no-repeat !bg-center pt-10 pl-10' style={{background: `linear-gradient(to top, rgba(2, 6, 23, 1), rgba(2, 6, 23, .95)), url(${imgBaseUrl}${data.backdrop_path})`}}>
-        <div className='w-72 min-w-72 h-[450px] rounded-lg'>
+    <div className='p-5  flex lg:flex-row flex-col gap-10 min-calc-h-screen-16 !bg-cover !bg-no-repeat !bg-center pt-10 pl-10' style={{background: `linear-gradient(to top, rgba(2, 6, 23, 1), rgba(2, 6, 23, .95)), url(${imgBaseUrl}${data.backdrop_path})`}}>
+        <div className='lg:w-72 lg:min-w-72 lg:h-[450px] rounded-lg w-56 min-w-56 h-[350px]'>
             <img className='w-full h-full rounded-lg object-cover' src={imgBaseUrl + data.poster_path} alt="poster" />
         </div>
-        <div className='flex flex-col gap-3'>
-            <h1 className='text-white font-bold text-5xl'>{ data.name || data.title }</h1>
+        <div className='flex flex-col gap-4'>
+            <h1 className='text-white font-bold text-3xl lg:text-5xl'>{ data.name || data.title }</h1>
             <div className='flex gap-2 items-center'>
                 <div className='flex items-center gap-1.5 text-gray-500 text-xl font-medium '>
                     <span className='text-yellow-500 text-2xl'><TbStarFilled/></span>
@@ -42,20 +42,10 @@ const ExploreHeader = ({data, type}) => {
                 <span className='flex gap-1 text-xl text-gray-500 font-medium'>
                     { gnrs.join(', ') }
                 </span>
-                <p className='text-lg font-medium text-gray-100'>{ data.overview }</p>
-                {
-                    credits && <div className='flex gap-2 items-center flex-wrap'>
-                    {credits.cast.map((cast, index) => (
-                        <>
-                            { (index < 4) && <div key={cast.id} className='flex flex-col gap-0.5 items-center'>
-                            <img className='w-11 min-w-11 h-11 object-cover rounded-full' src={imgBaseUrl + cast.profile_path} alt="cast" />
-                            <span className='text-gray-500'>({cast.name})</span>
-                            <span className='text-white'>{cast.character}</span>
-                        </div>}
-                        </>
-                    ))}
-                </div>
-                }
+
+                <p className='text-white text-base font-medium'>{ data.overview }</p>
+                
+                
         </div>
     </div>
   )

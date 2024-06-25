@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ExploreHeader from '../../components/ExploreHeader'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import Trailer from '../../components/Trailer'
 
 const Explore = () => {
     const [data, setData] = useState(null)
@@ -19,8 +20,11 @@ const Explore = () => {
     if(data) document.title = data.name || data.title
 
   return (
-    <div>
-        { data && <ExploreHeader data={data} type={option}/>}
+    <div className='calc-h-screen-16 overflow-y-auto overflow-x-hidden w-full sm:calc-w-screen-64'>
+        { data && <div>
+            <ExploreHeader data={data} type={option}/>
+            <Trailer data={data} type={option}/>
+          </div>}
     </div>
   )
 }
