@@ -8,7 +8,7 @@ const Sidebar = () => {
     const { open } = useContext(Context)
 
   return (
-    <aside className={classNames('bg-slate-950 transition-all duration-1000 overflow-x-hidden w-0 sm:w-64 calc-h-screen-16 overflow-y-auto border-t border-slate-800', { 'min-[381px]:w-64 min-[381px]:min-w-64 min-w-44': open })}>
+    <aside className={classNames('bg-slate-950 transition-all duration-1000 overflow-x-hidden absolute sm:static top-16 z-20 -left-full w-64 calc-h-screen-16 overflow-y-auto border-t border-slate-800', {'!left-0': open})}>
         <div className='py-5 pl-5'>
             <h1 className='text-2xl text-white font-bold'>Genre</h1>
 
