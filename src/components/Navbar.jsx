@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <div className='relative'>
-        <nav className='w-full bg-slate-950 h-16 flex items-center px-5 justify-between'>
+        <nav className='w-full bg-slate-950 h-16 flex items-center px-5 justify-between sticky top-0'>
             <div className='flex items-center gap-3' >
                 <button onClick={() => setOpen(!open)} className={classNames('w-11 min-w-11 h-11 bg-slate-800 rounded-md flex items-center justify-center sm:hidden')}>
                     <span className={classNames('relative w-7 block rounded-full h-[3px] after:block after:rounded-full after:h-[3px] bg-white after:bg-white transition-all duration-500 after:transition-all after:duration-500 before:transition-all before:duration-500 before:block before:rounded-full before:h-[3px] before:bg-white after:absolute before:absolute after:left-0 before:left-0 after:w-full before:w-full before:-top-2 after:top-2', { 'after:!w-4 before:!w-4 before:-rotate-45 before:translate-y-[3px] before:-translate-x-1 after:rotate-45 after:-translate-y-[3px] after:-translate-x-1' : open })}></span>

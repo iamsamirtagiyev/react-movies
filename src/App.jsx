@@ -6,10 +6,12 @@ import { useState } from "react"
 function App() {
 
   const [open, setOpen] = useState(false)
+  const imgBaseUrl = 'https://image.tmdb.org/t/p/original'
 
   const data = {
     open,
-    setOpen
+    setOpen,
+    imgBaseUrl
   }
 
   return (

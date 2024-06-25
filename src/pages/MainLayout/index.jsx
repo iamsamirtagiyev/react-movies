@@ -5,7 +5,7 @@ import Sidebar from '../../components/Sidebar'
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className=''>
         <Navbar/>
         <div className='flex'>
             <Sidebar/>
