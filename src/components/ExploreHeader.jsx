@@ -18,8 +18,7 @@ const ExploreHeader = ({ data, type }) => {
     creditData();
   }, []);
 
-  console.log(data);
-  console.log(credits);
+
   data.genres.map((genre) => gnrs.push(genre.name));
 
   return (
@@ -29,7 +28,7 @@ const ExploreHeader = ({ data, type }) => {
         background: `linear-gradient(to top, rgba(2, 6, 23, 1), rgba(2, 6, 23, .95)), url(${imgBaseUrl}${data.backdrop_path})`,
       }}
     >
-      <div className="lg:w-72 lg:min-w-72 lg:h-[450px] sticky top-0 rounded-lg w-56 min-w-56 h-[350px]">
+      <div className="lg:w-72 lg:min-w-72 lg:h-[450px] sm:sticky top-0 rounded-lg w-56 min-w-56 h-[350px]">
         <img
           className="w-full h-full rounded-lg object-cover"
           src={imgBaseUrl + data.poster_path}

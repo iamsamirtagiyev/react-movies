@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import ExploreHeader from '../../components/ExploreHeader'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -8,6 +8,7 @@ import Categories from '../../components/Categories'
 const Explore = () => {
     const [data, setData] = useState(null)
     const { option, id } = useParams()
+    const scrollRef = useRef()
 
     const categories = [
       {
@@ -29,10 +30,15 @@ const Explore = () => {
         exploreData()
     }, [])
 
+    useEffect(() => {
+        exploreData()
+        scrollRef.current.scrollTop = 0
+    }, [option, id])
+
     if(data) document.title = data.name || data.title
 
   return (
-    <div className='calc-h-screen-16 overflow-y-auto bg-slate-950 text-white overflow-x-hidden w-full sm:calc-w-screen-64'>
+    <div ref={scrollRef} className='calc-h-screen-16 overflow-y-auto bg-slate-950 text-white overflow-x-hidden w-full sm:calc-w-screen-64'>
         { data && <div>
             <ExploreHeader data={data} type={option}/>
             <Trailer data={data} type={option}/>
