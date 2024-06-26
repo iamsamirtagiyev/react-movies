@@ -4,6 +4,7 @@ import { Context } from '../context'
 import { FaRegCirclePlay } from "react-icons/fa6";
 import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
+import Loader from './Loader';
 
 const Banner = () => {
 
