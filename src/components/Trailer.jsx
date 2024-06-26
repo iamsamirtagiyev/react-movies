@@ -14,6 +14,10 @@ const Trailer = ({ data, type }) => {
         videoData()
     }, [])
 
+    useEffect(() => {
+        videoData()
+    }, [data])
+
 
   return (
     <div className='bg-slate-950 p-5'>

@@ -19,6 +19,10 @@ const Categories = ({ category }) => {
     trendingData()
   }, [])
 
+  useEffect(() => {
+    trendingData()
+  }, [data])
+
   const next = () => { scrollRef.current.scrollLeft += 200 }
 
   const prev = () => { scrollRef.current.scrollLeft -= 200 }
@@ -26,7 +30,7 @@ const Categories = ({ category }) => {
   return (
     <>
       {
-        data && <div className='px-2 relative'>
+        data && <div className='px-2 relative mb-5'>
         <h1 className='text-4xl mt-10 font-bold capitalize whitespace-nowrap overflow-hidden text-ellipsis'>{category.title}</h1>
       
             <div ref={scrollRef} className='scroll-smooth calc-w-screen-[256px] scroll overflow-x-auto transition-all duration-500 flex items-center gap-3 mt-5 snap-mandatory snap-x'>

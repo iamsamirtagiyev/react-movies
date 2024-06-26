@@ -1,4 +1,4 @@
-import Discover from "./pages/Discover"
+import Discover from "./pages/MainLayout/Discover"
 import MainLayout from "./pages/MainLayout"
 import Explore from "./pages/MainLayout/Explore"
 import Home from "./pages/MainLayout/Home"
