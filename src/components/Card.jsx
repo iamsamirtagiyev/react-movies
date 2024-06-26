@@ -8,18 +8,21 @@ const Card = ({data}) => {
 
     const { imgBaseUrl, open } = useContext(Context)
     const navigate = useNavigate()
+    // const history = useHistory()
 
     const explore = () => {
         if(data.title){
             navigate(`/movie/${data.id}`)
+            navigate(0)
         }
         else{
             navigate(`/tv/${data.id}`)
+            navigate(0)
         }
     }
 
   return (
-    <div onClick={explore} className={classNames('min-w-44 cursor-pointer transition-all duration-500 group snap-start')} title={data.name || data.title}>
+    <div onClick={explore} className={classNames('min-w-44 w-44 cursor-pointer transition-all duration-500 group snap-start')} title={data.name || data.title}>
         <div className='w-44 h-64 rounded-md overflow-hidden bg-center transition-all duration-500 bg-slate-800 bg-no-repeat' style={{backgroundImage: 'url(./images/video-bg-icon.png)'}}>
             <img className='transition-all duration-500 w-full h-64 object-cover object-center group-hover:scale-110' src={imgBaseUrl+data.poster_path} alt="poster" />
         </div>

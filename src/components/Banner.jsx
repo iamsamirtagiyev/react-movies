@@ -10,6 +10,7 @@ const Banner = () => {
   const [ data, setData ] = useState(null)
   const { imgBaseUrl, open } = useContext(Context)
   const navigate = useNavigate()
+  const gnrs = []
 
   const trendingData = async () => {
     const response = await axios.get('/trending/all/week')
@@ -19,6 +20,8 @@ const Banner = () => {
   useEffect(() => {
     trendingData()
   }, [])
+
+
 
   const details = () => {
     if(data.name){

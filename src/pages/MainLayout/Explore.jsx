@@ -30,11 +30,6 @@ const Explore = () => {
         exploreData()
     }, [])
 
-    useEffect(() => {
-        exploreData()
-        scrollRef.current.scrollTop = 0
-    }, [option, id])
-
     if(data) document.title = data.name || data.title
 
   return (

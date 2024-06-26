@@ -19,6 +19,7 @@ const ExploreHeader = ({ data, type }) => {
   }, []);
 
 
+
   data.genres.map((genre) => gnrs.push(genre.name));
 
   return (
@@ -28,7 +29,8 @@ const ExploreHeader = ({ data, type }) => {
         background: `linear-gradient(to top, rgba(2, 6, 23, 1), rgba(2, 6, 23, .95)), url(${imgBaseUrl}${data.backdrop_path})`,
       }}
     >
-      <div className="lg:w-72 lg:min-w-72 lg:h-[450px] sm:sticky top-0 rounded-lg w-56 min-w-56 h-[350px]">
+      <div className="lg:w-72 relative overflow-hidden lg:min-w-72 lg:h-[450px] sm:sticky top-0 rounded-lg w-56 min-w-56 h-[350px]">
+        { data.last_episode_to_air && <span className="absolute bg-red-600 h-9 w-44 flex items-center justify-center top-5 -right-10 rotate-45 font-medium text-lg capitalize">{data.last_episode_to_air.episode_type}</span> }
         <img
           className="w-full h-full rounded-lg object-cover"
           src={imgBaseUrl + data.poster_path}

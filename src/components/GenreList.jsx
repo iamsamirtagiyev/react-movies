@@ -19,8 +19,8 @@ const GenreList = ({genre}) => {
     <ul className='mt-3 flex flex-col gap-2.5'>
         <h1 className='text-2xl text-white font-bold capitalize border-b border-slate-800 pb-5'>{genre.title}</h1>
         {
-            data && data.map(genre => (
-                <Genre key={genre.id} genre={genre} />
+            data && data.map(gnr => (
+                <Genre key={gnr.id} genre={gnr} type={genre.type} />
             ))
         }
     </ul>

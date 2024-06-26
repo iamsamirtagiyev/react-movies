@@ -10,22 +10,19 @@ const Sidebar = () => {
     const genres = [
         {
             title: 'movie list',
-            path: '/genre/movie/list'
+            path: '/genre/movie/list',
+            type : 'movie'
         },
         {
             title: 'TV list',
-            path: '/genre/tv/list'
+            path: '/genre/tv/list',
+            type: 'tv'
         },
     ]
 
   return (
     <aside className={classNames('bg-slate-950 transition-all duration-1000 overflow-x-hidden absolute sm:static top-16 z-20 -left-full w-64 min-w-64 calc-h-screen-16 overflow-y-auto border-t border-slate-800 px-5', {'!left-0': open})}>
         <div className=''>
-            {/* <h1 className='text-2xl text-white font-bold'>Genre</h1> */}
-
-            {/* <ul className='mt-3'>
-                <li className='transition-all duration-500 text-xl font-medium text-white/20 hover:text-white/50'>Action</li>
-            </ul> */}
             <div>
                 {
                     genres.map((genre, key) => (
