@@ -34,7 +34,7 @@ const ExploreHeader = ({ data, type }) => {
       }}
     >
       <div className="lg:w-72 relative overflow-hidden lg:min-w-72 lg:h-[450px] sm:sticky top-10 rounded-lg w-56 min-w-56 h-[350px]">
-        { data.last_episode_to_air?.episode_type == 'finale' && <span className="absolute bg-red-600 h-9 w-44 flex items-center justify-center top-5 -right-10 rotate-45 font-medium text-lg capitalize">finaled</span> }
+        { data?.last_episode_to_air?.episode_type == 'finale' && <span className="absolute bg-red-600 h-9 w-44 flex items-center justify-center top-5 -right-10 rotate-45 font-medium text-lg capitalize">finaled</span> }
         <img
           className="w-full h-full rounded-lg object-cover"
           src={imgBaseUrl + data.poster_path}
