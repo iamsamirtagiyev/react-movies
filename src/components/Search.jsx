@@ -24,7 +24,7 @@ const Search = () => {
    
 
   return (
-    <div className={classNames('fixed w-full calc-h-screen-16 overflow-auto sm:calc-w-screen-64 bg-slate-950 text-white top-16 left-64 p-5')}>
+    <div className={classNames('fixed w-full calc-h-screen-16 left-0 overflow-auto sm:calc-w-screen-64 bg-slate-950 text-white top-16 sm:left-64 p-5')}>
         <div className='flex flex-col gap-3'>
             <span className='text-indigo-600 font-medium capitalize'>Results for</span>
             <span className='text-5xl font-bold capitalize'>{search}</span>
