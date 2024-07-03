@@ -6,14 +6,14 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Card = ({data}) => {
 
-    const { imgBaseUrl, open } = useContext(Context)
+    const { imgBaseUrl, setSearch } = useContext(Context)
     const navigate = useNavigate()
 
 
   return (
     <>
         {
-            data.poster_path && <Link to={ data.title ? `/movie/${data.id}` : `/tv/${data.id}` } className={classNames('min-w-44 w-44 cursor-pointer transition-all duration-500 group snap-start')} title={data.name || data.title}>
+            data.poster_path && <Link to={ data.title ? `/movie/${data.id}` : `/tv/${data.id}` } onClick={() => setSearch('')} className={classNames('min-w-44 w-44 cursor-pointer transition-all duration-500 group snap-start')} title={data.name || data.title}>
             <div className='w-44 h-64 rounded-md overflow-hidden bg-center transition-all duration-500 bg-slate-800 bg-no-repeat' style={{backgroundImage: 'url(./images/video-bg-icon.png)'}}>
                 <img className='transition-all duration-500 w-full h-64 object-cover object-center group-hover:scale-110' src={imgBaseUrl+data.poster_path} alt="poster" />
             </div>

@@ -7,7 +7,7 @@ import { IoIosClose } from "react-icons/io";
 
 const Navbar = () => {
 
-    const { open, setOpen } = useContext(Context)
+    const { open, setOpen, search, setSearch } = useContext(Context)
     const [show, setShow] = useState(false)
 
   return (
@@ -30,7 +30,7 @@ const Navbar = () => {
                 </button>
 
                 <div className={classNames('flex gap-2 items-center text-white sm:relative sm:w-96 absolute left-0 top-0 w-full bg-slate-950 h-full px-2', { 'hidden sm:flex': !show })}>
-                    <input className='peer w-full outline-none bg-slate-800 rounded-md text-lg font-medium capitalize px-3 py-1.5 pl-10 transition-all duration-500 border-2 border-transparent hover:border-white/20 focus:border-white/50 focus:pl-3' type="text" placeholder='Serach Any movies...' />
+                    <input className='peer w-full outline-none bg-slate-800 rounded-md text-lg font-medium capitalize px-3 py-1.5 pl-10 transition-all duration-500 border-2 border-transparent hover:border-white/20 focus:border-white/50 focus:pl-3' type="text" placeholder='Serach Any movies...' onChange={e => setSearch(e.target.value)} />
                     <span className='absolute  text-2xl left-4 text-white/30 peer-focus:opacity-0 peer-focus:pointer-events-none transition-all duration-500'>
                         <RiSearchLine/> 
                     </span>

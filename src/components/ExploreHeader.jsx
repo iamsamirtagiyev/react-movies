@@ -28,7 +28,7 @@ const ExploreHeader = ({ data, type }) => {
 
   return (
     <div
-      className="p-5  flex lg:flex-row flex-col gap-10 min-calc-h-screen-16 !bg-cover !bg-no-repeat !bg-center pt-10 pl-10"
+      className="p-5 !bg-fixed flex lg:flex-row flex-col gap-10 min-calc-h-screen-16 !bg-cover !bg-no-repeat !bg-center pt-10 pl-10"
       style={{
         background: `linear-gradient(to top, rgba(2, 6, 23, 1), rgba(2, 6, 23, .95)), url(${imgBaseUrl}${data.backdrop_path})`,
       }}
